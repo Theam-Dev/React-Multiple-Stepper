@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import './Style.css';
+import React from 'react';
+import MultiStep from 'react-multistep';
+import { StepOne } from './StepOne';
+import { StepTwo } from './StepTwo';
 
+const steps = [
+  { name: "Personal", component: <StepOne /> },
+  { name: "Info", component: <StepTwo /> }
+];
 function App() {
   return (
     <div className="App">
+     
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <h2>React Multi Stepper</h2>
+        <MultiStep steps={steps} />
       </header>
     </div>
   );
 }
-
 export default App;
+
